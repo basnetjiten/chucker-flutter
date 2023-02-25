@@ -10,16 +10,16 @@ environment:
   sdk: ">=2.16.0 <3.0.0"
 
 dependencies:
-  chopper: ^6.0.0
-  dio: ^4.0.4
+  chopper: ^6.1.1
+  dio: ^5.0.1
   flutter:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  http: ^0.13.4
-  http_mock_adapter: ^0.3.2
-  share_plus: ^6.3.0
-  shared_preferences: ^2.0.13
+  http: ^0.13.5
+  http_mock_adapter: ^0.4.2
+  share_plus: ^6.3.1
+  shared_preferences: ^2.0.18
 
 dev_dependencies:
   flutter_test:

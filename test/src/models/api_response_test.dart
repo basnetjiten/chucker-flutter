@@ -8,18 +8,18 @@ void main() {
     const path = 'api/get';
     const method = 'GET';
     const statusCode = 500;
-    const connectionTimeout = -1;
+    const connectionTimeout = Duration.zero;
     const contentType = 'xml';
     const headers = 'bearer token';
     const queryParameters = 'userId:1';
-    const receiveTimeout = -1;
+    const receiveTimeout = Duration.zero;
     const request = {'id': '1'};
     const requestSize = 5.0;
     final requestTime = DateTime(2000);
     const responseSize = 5.0;
     final responseTime = DateTime(2001);
     const responseType = 'xml';
-    const sendTimeout = -1;
+    const sendTimeout = Duration.zero;
     const checked = true;
     const clientLibrary = 'http';
 

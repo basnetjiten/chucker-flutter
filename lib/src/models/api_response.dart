@@ -31,18 +31,18 @@ class ApiResponse {
         baseUrl: json['baseUrl'] as String,
         method: json['method'] as String,
         statusCode: json['statusCode'] as int,
-        connectionTimeout: json['connectionTimeout'] as int,
+        connectionTimeout: json['connectionTimeout'] as Duration?,
         contentType: json['contentType'] as String?,
         headers: json['headers'] as String,
         queryParameters: json['queryParameters'] as String,
-        receiveTimeout: json['receiveTimeout'] as int,
+        receiveTimeout: json['receiveTimeout'] as Duration?,
         request: json['request'] as Map<String, dynamic>,
         requestSize: json['requestSize'] as double,
         requestTime: DateTime.parse(json['requestTime'] as String),
         responseSize: json['responseSize'] as double,
         responseTime: DateTime.parse(json['responseTime'] as String),
         responseType: json['responseType'] as String,
-        sendTimeout: json['sendTimeout'] as int,
+        sendTimeout: json['sendTimeout'] as Duration?,
         path: json['path'] as String,
         checked: json['checked'] as bool? ?? false,
         clientLibrary: (json['clientLibrary'] as String?) ?? 'N/A',
@@ -55,18 +55,18 @@ class ApiResponse {
         path: '',
         method: 'GET',
         statusCode: 200,
-        connectionTimeout: 0,
+        connectionTimeout: Duration.zero,
         contentType: 'application/json',
         headers: '',
         queryParameters: '',
-        receiveTimeout: 0,
+        receiveTimeout: Duration.zero,
         request: {'': ''},
         requestSize: 0,
         requestTime: DateTime.now(),
         responseSize: 0,
         responseTime: DateTime.now(),
         responseType: 'json',
-        sendTimeout: 0,
+        sendTimeout:Duration.zero,
         checked: false,
         clientLibrary: '',
       );
@@ -108,19 +108,19 @@ class ApiResponse {
   final String headers;
 
   ///Timeout in milliseconds for sending data
-  final int sendTimeout;
+  final Duration? sendTimeout;
 
   ///Response data type
   final String responseType;
 
   ///Timeout in milliseconds for receiving data
-  final int receiveTimeout;
+  final Duration? receiveTimeout;
 
   ///Request query params
   final String queryParameters;
 
   ///Timeout in milliseconds for making connection
-  final int connectionTimeout;
+  final Duration? connectionTimeout;
 
   ///To check whether user has selected this instance or not
   final bool checked;
@@ -168,11 +168,11 @@ class ApiResponse {
     Map<String, dynamic>? body,
     String? contentType,
     String? headers,
-    int? sendTimeout,
+    Duration? sendTimeout,
     String? responseType,
-    int? receiveTimeout,
+    Duration? receiveTimeout,
     String? queryParameters,
-    int? connectionTimeout,
+    Duration? connectionTimeout,
     bool? checked,
     String? clientLibrary,
   }) {
